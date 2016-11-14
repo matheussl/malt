@@ -41,9 +41,9 @@ def GET_ARTICLE_IMAGE(article, root):
         return ""
 
     base = os.path.join('content', root)
-    banners = map(functools.partial(os.path.join, root), os.walk(base).next()[2])
+    banners = map(root.__add__("/").__add__, next(os.walk(base))[2])
     random.seed(article.date)
-    return random.choice(banners)
+    return random.choice(list(banners))
 
 
 def GET_ARTICLE_AT_GITHUB(article, repo, branch):
