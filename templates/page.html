@@ -7,6 +7,10 @@
     <link href="{{ SITEURL }}/theme/css/page.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 {% endblock %}
 
+{% block navbar %}
+    {% include "includes/navbar-home.html" %}
+{% endblock %}
+
 {% block banner %}
 <div class="hero hero-article" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('{{ GET_ARTICLE_IMAGE(page, ARTICLE_BANNERS_FOLDER) }}')">
 </div>
